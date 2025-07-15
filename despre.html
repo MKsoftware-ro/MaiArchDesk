@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Despre Noi | MaiArchDesk</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Află povestea și viziunea biroului de arhitectură MaiArchDesk din București.">
+  <meta name="keywords" content="Despre MaiArchDesk, birou arhitectura București, echipa arhitecti, viziune arhitectura">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maiarchdesk.ro/despre.html">
+  <meta name="theme-color" content="#111">
+
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maiarchdesk.ro/despre.html">
+  <meta property="og:title" content="Despre Noi | MaiArchDesk">
+  <meta property="og:description" content="Cunoaște echipa și filosofia noastră de proiectare.">
+  <meta property="og:image" content="https://maiarchdesk.ro/img/og-despre.jpg">
+
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--primary:#c00000;--dark:#111;--light:#fff;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;line-height:1.6}
+
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--dark)}
+    nav img{height:40px}
+    nav ul{display:flex;gap:1rem;list-style:none}
+    nav a{color:var(--light);text-decoration:none;font-weight:500}
+    nav select{background:#222;color:#fff;border:none;padding:.25rem}
+
+    header{background-image:url('img/despre-header.png');height:30vh;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+    header h1{font-size:2.25rem;margin-bottom:.5rem}
+
+    main{max-width:800px;margin:-6vh auto 0;padding:1.5rem 2rem 4rem}
+    h1{font-size:1.75rem;margin-bottom:1rem}
+    p{margin-bottom:1rem}
+
+    .btn-back{display:inline-block;margin-top:1.25rem;background:var(--primary);color:#fff;padding:.5rem 1.25rem;border-radius:4px;text-decoration:none}
+
+    footer{background:var(--dark);color:var(--light);text-align:center;padding:2rem}
+    footer select{background:#222;color:#fff;border:none;padding:.25rem}
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="img/maiarchdesk-logo.png" alt="Logo MaiArchDesk" loading="lazy">
+    <ul>
+      <li><a href="index.html#despre" data-i18n="navBack">Înapoi</a></li>
+      <li>
+        <select id="lang-select">
+          <option value="ro">RO</option>
+          <option value="en">EN</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+
+  <header>
+    <div>
+      <h1 data-i18n="despreTitle">Despre Noi</h1>
+      <p data-i18n="despreSubtitle">Pasiune pentru arhitectură. Respect pentru spațiu.</p>
+    </div>
+  </header>
+
+  <main>
+    <h1 data-i18n="sectionTitle">Cine suntem?</h1>
+    <p data-i18n="p1">MaiArchDesk este un birou de arhitectură din București fondat din dorința de a crea spații funcționale, moderne și pline de viață.</p>
+    <p data-i18n="p2">Echipa noastră este formată din arhitecți tineri și pasionați, care combină inovația cu experiența practică pentru a oferi soluții personalizate fiecărui proiect.</p>
+    <p data-i18n="p3">Valorile noastre includ transparența, colaborarea strânsă cu clienții și un angajament profund pentru calitate și durabilitate.</p>
+    <a href="index.html" class="btn-back" data-i18n="btnBack">Înapoi la pagina principală</a>
+  </main>
+
+  <footer>
+    <p data-i18n="footerCopy">© 2025 MaiArchDesk. Toate drepturile rezervate.</p>
+  </footer>
+
+<script>
+const ro={navBack:'Înapoi',despreTitle:'Despre Noi',despreSubtitle:'Pasiune pentru arhitectură. Respect pentru spațiu.',sectionTitle:'Cine suntem?',p1:'MaiArchDesk este un birou de arhitectură din București fondat din dorința de a crea spații funcționale, moderne și pline de viață.',p2:'Echipa noastră este formată din arhitecți tineri și pasionați, care combină inovația cu experiența practică pentru a oferi soluții personalizate fiecărui proiect.',p3:'Valorile noastre includ transparența, colaborarea strânsă cu clienții și un angajament profund pentru calitate și durabilitate.',btnBack:'Înapoi la pagina principală',footerCopy:'© 2025 MaiArchDesk. Toate drepturile rezervate.'};
+const en={navBack:'Back',despreTitle:'About Us',despreSubtitle:'Passion for architecture. Respect for space.',sectionTitle:'Who are we?',p1:'MaiArchDesk is an architecture office in Bucharest born out of the desire to create functional, modern and lively spaces.',p2:'Our team consists of young and passionate architects who blend innovation with practical experience to provide personalized solutions for every project.',p3:'Our values include transparency, close collaboration with clients and a deep commitment to quality and sustainability.',btnBack:'Back to main page',footerCopy:'© 2025 MaiArchDesk. All rights reserved.'};
+const sel=document.getElementById('lang-select');
+function setLang(l){const d=l==='en'?en:ro;document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=d[e.dataset.i18n]);sel.value=l;}
+sel.addEventListener('change',e=>setLang(e.target.value));
+</script>
+</body>
+</html>

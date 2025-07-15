@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviciile Noastre | MaiArchDesk</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Descoperă serviciile oferite de biroul de arhitectură MaiArchDesk din București: proiectare, design interior și consultanță urbanistică.">
+  <meta name="keywords" content="servicii arhitectura, proiectare, design interior, urbanism, MaiArchDesk">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maiarchdesk.ro/servicii.html">
+  <meta name="theme-color" content="#111">
+
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maiarchdesk.ro/servicii.html">
+  <meta property="og:title" content="Serviciile Noastre | MaiArchDesk">
+  <meta property="og:description" content="Află ce servicii oferim: de la proiectare arhitecturală la design interior și consultanță urbanistică.">
+  <meta property="og:image" content="https://maiarchdesk.ro/img/og-servicii.jpg">
+
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--primary:#c00000;--dark:#111;--light:#fff;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;line-height:1.6}
+
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:var(--dark)}
+    nav img{height:40px}
+    nav ul{display:flex;gap:1rem;list-style:none}
+    nav a{color:var(--light);text-decoration:none;font-weight:500}
+    nav select{background:#222;color:#fff;border:none;padding:.25rem}
+
+    header{background-image:url('img/servicii-header.png');height:30vh;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+    header h1{font-size:2.25rem;margin-bottom:.5rem}
+
+    main{max-width:800px;margin:-6vh auto 0;padding:1.5rem 2rem 4rem}
+    h1{font-size:1.75rem;margin-bottom:1rem}
+    p{margin-bottom:1rem}
+    .btn-back{display:inline-block;margin-top:1.25rem;background:var(--primary);color:#fff;padding:.5rem 1.25rem;border-radius:4px;text-decoration:none}
+    footer{background:var(--dark);color:var(--light);text-align:center;padding:2rem}
+    footer select{background:#222;color:#fff;border:none;padding:.25rem}
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="img/maiarchdesk-logo.png" alt="Logo MaiArchDesk" loading="lazy">
+    <ul>
+      <li><a href="index.html#servicii" data-i18n="navBack">Înapoi</a></li>
+      <li>
+        <select id="lang-select">
+          <option value="ro">RO</option>
+          <option value="en">EN</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+
+  <header>
+    <div>
+      <h1 data-i18n="serviciiTitle">Serviciile Noastre</h1>
+      <p data-i18n="serviciiSubtitle">De la idee la execuție — soluții complete de arhitectură.</p>
+    </div>
+  </header>
+
+  <main>
+    <h1 data-i18n="sectionTitle">Ce oferim?</h1>
+    <p data-i18n="p1">Oferim servicii complete de proiectare arhitecturală, cu soluții creative și adaptate nevoilor fiecărui client.</p>
+    <p data-i18n="p2">Designul interior este conceput în armonie cu spațiul, funcționalitatea și estetica dorită.</p>
+    <p data-i18n="p3">Consultanța urbanistică ne permite să ghidăm proiectele în conformitate cu reglementările locale și potențialul urbanistic.</p>
+    <a href="index.html" class="btn-back" data-i18n="btnBack">Înapoi la pagina principală</a>
+  </main>
+
+  <footer>
+    <p data-i18n="footerCopy">© 2025 MaiArchDesk. Toate drepturile rezervate.</p>
+  </footer>
+
+<script>
+const ro={navBack:'Înapoi',serviciiTitle:'Serviciile Noastre',serviciiSubtitle:'De la idee la execuție — soluții complete de arhitectură.',sectionTitle:'Ce oferim?',p1:'Oferim servicii complete de proiectare arhitecturală, cu soluții creative și adaptate nevoilor fiecărui client.',p2:'Designul interior este conceput în armonie cu spațiul, funcționalitatea și estetica dorită.',p3:'Consultanța urbanistică ne permite să ghidăm proiectele în conformitate cu reglementările locale și potențialul urbanistic.',btnBack:'Înapoi la pagina principală',footerCopy:'© 2025 MaiArchDesk. Toate drepturile rezervate.'};
+const en={navBack:'Back',serviciiTitle:'Our Services',serviciiSubtitle:'From concept to execution — complete architectural solutions.',sectionTitle:'What do we offer?',p1:'We offer full architectural design services, with creative solutions tailored to each client’s needs.',p2:'Interior design is created in harmony with the space, functionality and desired aesthetic.',p3:'Urban planning consulting helps guide projects in compliance with local regulations and urban potential.',btnBack:'Back to main page',footerCopy:'© 2025 MaiArchDesk. All rights reserved.'};
+const sel=document.getElementById('lang-select');
+function setLang(l){const d=l==='en'?en:ro;document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=d[e.dataset.i18n]);sel.value=l;}
+sel.addEventListener('change',e=>setLang(e.target.value));
+</script>
+</body>
+</html>
